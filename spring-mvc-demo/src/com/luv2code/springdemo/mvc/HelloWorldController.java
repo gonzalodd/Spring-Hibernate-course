@@ -25,6 +25,18 @@ public class HelloWorldController {
 	@RequestMapping("/processFormVersion2")
 	public String letsShouetDude(HttpServletRequest request, Model model) {
 		
+		// read the request parameter from the HTML form
+		String theName = request.getParameter("studentName");
+		
+		// convert the data to all caps
+		theName = theName.toUpperCase();
+		
+		// create the message
+		String result = "Yo! " + theName;
+		
+		// add message to the model
+		model.addAttribute("message", result);
+		
 		return "helloworld";
 	}
 	
