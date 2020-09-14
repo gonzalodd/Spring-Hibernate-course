@@ -20,11 +20,18 @@
 			
 			<form:select path="country">
 			
-				<form:options items="${theCountryOptions}" />
+				<form:options items="${student.countryOptions}" />
 				
 			</form:select>
 			
 			<br><br>
+			
+			Favorite Language:
+			
+			Java <form:radiobutton path="FavoriteLanguage" value="Java"/>		
+			C# <form:radiobutton path="FavoriteLanguage" value="C#"/>	
+			PHP <form:radiobutton path="FavoriteLanguage" value="PHP"/>	
+			Ruby <form:radiobutton path="FavoriteLanguage" value="Ruby"/>		
 			
 			<input type="submit" value="submit">
 			
