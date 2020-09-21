@@ -23,27 +23,37 @@ public class CreateDemo {
 		
 		try {			
 			
+			// create objects
+			Instructor tempInstructor = 
+					new Instructor("Damian", "Nuñez", "dnuñez@luv2code.com");
+			
+			InstructorDetail tempInstructorDetail = 
+					new InstructorDetail(
+							"http://www.youtube.com/dnuñezzz",
+							"Play videogames");
+			/*
+			Instructor tempInstructor = 
+					new Instructor("Gonzalo", "Duval", "gduval@luv2code.com");
+			
+			InstructorDetail tempInstructorDetail = 
+					new InstructorDetail(
+							"http://www.youtube.com/gduval",
+							"Love to code!!!");
+			*/
+			
+			// associate the objects
+			tempInstructor.setInstructorDetail(tempInstructorDetail);
 			
 			// begin transaction
 			session.beginTransaction();
 			
-			// get instructor by primary key / id
+			// save instructor
+			//
+			// Note: this will ALSO save the details object because of CascateType.ALL
+			//
 			
-			int theId = 1;
-			Instructor tempInstructor = 
-					session.get(Instructor.class, theId);
-			
-			System.out.println("Found instructor: " + tempInstructor);
-			
-			// delete the instructor
-			
-			if(tempInstructor != null) {
-				System.out.println("Deleting: " +  tempInstructor);
-				
-				// Note: will ALSO delete associated "details" object because of CascadeType.ALL
-				session.delete(tempInstructor);
-				
-			}
+			System.out.println("Saving instructor: " + tempInstructor);
+			session.save(tempInstructor);
 			
 			// commit transaction
 			session.getTransaction().commit();
