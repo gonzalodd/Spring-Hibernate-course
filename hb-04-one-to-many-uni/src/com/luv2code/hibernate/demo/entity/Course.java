@@ -92,7 +92,7 @@ public class Course {
 	}
 	
 	// add convenience method
-	public void add(Review tempReview) {
+	public void addReview(Review tempReview) {
 		
 		if(reviews == null) {
 			reviews = new ArrayList<Review>();

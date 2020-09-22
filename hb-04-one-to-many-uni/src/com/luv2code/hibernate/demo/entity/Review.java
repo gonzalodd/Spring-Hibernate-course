@@ -29,7 +29,6 @@ public class Review {
 	@Column(name = "comment")
 	private String comment;
 	
-	
 	public Review() {
 		
 	}
