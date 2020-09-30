@@ -48,6 +48,14 @@
 			<version>${springsecurity.version}</version>
 		</dependency>
 		
+		<!-- Add support for the Spring Security Taglibs -->
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
