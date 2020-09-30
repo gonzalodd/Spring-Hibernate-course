@@ -1,5 +1,6 @@
 package com.luv2code.springsecurity.demo.config;
 
+import org.apache.taglibs.standard.lang.jstl.AndOperator;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -35,6 +36,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 			.formLogin()
 				.loginPage("/showMyLoginPage")
 				.loginProcessingUrl("/authenticateTheUser")
+				.permitAll()
+			.and()
+				.logout()
 				.permitAll();
 		
 	}
